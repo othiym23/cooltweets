@@ -1,0 +1,31 @@
+{
+  "name": "cooltweets",
+  "version": "0.0.0",
+  "description": "An app that will get all tweets with the \"cool\" tag, put it in a MongoDB DB, try to identify from which country it is from, if it cannot it will look in a redis db that stores every geoloc point along with its country. It will display all the tweets with express.",
+  "main": "cooltweets.js",
+  "dependencies": {
+    "mongoose": "~3.6.15",
+    "ntwitter": "~0.5.0",
+    "express": "3.3.4",
+    "jade": "*",
+    "stylus": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkinyMonkey/Cooltweets"
+  },
+  "keywords": [
+    "cool",
+    "twitter"
+  ],
+  "author": "Adrien candiotti",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/SkinyMonkey/Cooltweets/issues"
+  }
+}

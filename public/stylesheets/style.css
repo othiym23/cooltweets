@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+#tweets {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+}
+#tweets .tweet {
+  margin: 20px;
+}
+#tweets .tweet .title {
+  background-color: #eee;
+}
+#tweets .tweet .body {
+  background-color: #ffa;
+}
