@@ -1,3 +1,4 @@
+require('newrelic');
 
 /**
  * Module dependencies.
@@ -13,14 +14,17 @@ var express = require('express')
 var twitter = require('ntwitter');
 var credentials = require('./credentials.js');
 
-// Mongoose
-//var mongoose = require('mongoose');
-
-//mongoose.connect('mongodb://localhost/cooltweets');
-
 var tweets = require('./tweets').tweets;
 
 var app = express();
+
+app.configure('development', function(){
+	  app.use(express.errorHandler({ dumpExceptions: true, showStack: true  }));
+});
+
+app.configure('production', function(){
+	  app.use(express.errorHandler()); 
+});
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -40,7 +44,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function (req, res) { tweets.all(routes.index, res); });
-app.get('/users', user.list);
+app.get('/error', function() {throw new Error('This is a test')});
 
 var t = new twitter({
 	consumer_key: credentials.consumer_key,

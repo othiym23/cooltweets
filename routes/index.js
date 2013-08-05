@@ -1,10 +1,8 @@
-
 /*
- * GET home page.
- */
+** GET home page.
+*/
 
 exports.index = function(req, tweets, res){
-  // get last 100 tweets from the db
-  console.log(tweets);
-  res.render('index', { title: 'Cool tweets', tweets: tweets});
+  console.log(req);
+  res.render('index', { title: 'Cool tweets', tweets: tweets, error: req});
 };
